@@ -10,7 +10,11 @@ public class Node <DataType> {
 	
 	public void add(DataType data) {
 		Node<DataType> newNode = new Node<DataType>(data);
-		link = newNode;
+		if(link != null) {
+			link.add(data);
+		} else {
+			link = newNode;
+		}
 	}
 	
 	@Override
